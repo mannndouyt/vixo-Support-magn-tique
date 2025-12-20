@@ -366,6 +366,45 @@
             box-shadow: 0 0 0 2px rgba(108, 224, 132, 0.3);
         }
         
+        /* تنسيق القائمة المنسدلة للولايات */
+        .state-select {
+            width: 100%;
+            padding: 12px 14px;
+            background-color: #25361a;
+            border: 1px solid #587d68;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%236ce084' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left 14px center;
+            background-size: 12px;
+            padding-left: 40px;
+            text-align: right;
+        }
+        
+        .state-select:focus {
+            outline: none;
+            border-color: #6ce084;
+            box-shadow: 0 0 0 2px rgba(108, 224, 132, 0.3);
+        }
+        
+        .state-select option {
+            background-color: #25361a;
+            color: #fff;
+            padding: 10px;
+        }
+        
+        /* تغيير لون السهم للقائمة المنسدلة */
+        select::-ms-expand {
+            display: none;
+        }
+        
         .quantity-section {
             background: rgba(36, 72, 54, 0.5);
             border-radius: 10px;
@@ -704,6 +743,13 @@
                 padding: 15px;
             }
             
+            .state-select {
+                padding: 10px 12px;
+                font-size: 0.95rem;
+                padding-left: 36px;
+                background-position: left 12px center;
+            }
+            
             .guarantee-badges {
                 grid-template-columns: 1fr;
                 gap: 15px;
@@ -853,7 +899,59 @@
                         
                         <div class="form-group">
                             <label for="state">الولاية <span style="color: #8de361;">*</span></label>
-                            <input type="text" id="state" name="state" required placeholder="أدخل ولايتك">
+                            <select id="state" name="state" required class="state-select">
+                                <option value="" disabled selected>اختر ولايتك</option>
+                                <option value="03 — Laghouat">03 — Laghouat (الأغواط)</option>
+                                <option value="04 — Oum El Bouaghi">04 — Oum El Bouaghi (أم البواقي)</option>
+                                <option value="05 — Batna">05 — Batna (باتنة)</option>
+                                <option value="06 — Béjaïa">06 — Béjaïa (بجاية)</option>
+                                <option value="07 — Biskra">07 — Biskra (بسكرة)</option>
+                                <option value="09 — Blida">09 — Blida (البليدة)</option>
+                                <option value="10 — Bouira">10 — Bouira (البويرة)</option>
+                                <option value="12 — Tébessa">12 — Tébessa (تبسة)</option>
+                                <option value="13 — Tlemcen">13 — Tlemcen (تلمسان)</option>
+                                <option value="14 — Tiaret">14 — Tiaret (تيارت)</option>
+                                <option value="15 — Tizi Ouzou">15 — Tizi Ouzou (تيزي وزو)</option>
+                                <option value="16 — Alger">16 — Alger (الجزائر)</option>
+                                <option value="17 — Djelfa">17 — Djelfa (الجلفة)</option>
+                                <option value="18 — Jijel">18 — Jijel (جيجل)</option>
+                                <option value="19 — Sétif">19 — Sétif (سطيف)</option>
+                                <option value="20 — Saïda">20 — Saïda (سعيدة)</option>
+                                <option value="21 — Skikda">21 — Skikda (سكيكدة)</option>
+                                <option value="22 — Sidi Bel Abbès">22 — Sidi Bel Abbès (سيدي بلعباس)</option>
+                                <option value="23 — Annaba">23 — Annaba (عنابة)</option>
+                                <option value="24 — Guelma">24 — Guelma (قالمة)</option>
+                                <option value="25 — Constantine">25 — Constantine (قسنطينة)</option>
+                                <option value="26 — Médéa">26 — Médéa (المدية)</option>
+                                <option value="27 — Mostaganem">27 — Mostaganem (مستغانم)</option>
+                                <option value="28 — M’sila">28 — M’sila (المسيلة)</option>
+                                <option value="29 — Mascara">29 — Mascara (معسكر)</option>
+                                <option value="30 — Ouargla">30 — Ouargla (ورقلة)</option>
+                                <option value="31 — Oran">31 — Oran (وهران)</option>
+                                <option value="34 — Bordj Bou Arréridj">34 — Bordj Bou Arréridj (برج بوعريريج)</option>
+                                <option value="35 — Boumerdès">35 — Boumerdès (بومرداس)</option>
+                                <option value="36 — El Tarf">36 — El Tarf (الطارف)</option>
+                                <option value="38 — Tissemsilt">38 — Tissemsilt (تيسمسيلت)</option>
+                                <option value="39 — El Oued">39 — El Oued (الوادي)</option>
+                                <option value="40 — Khenchela">40 — Khenchela (خنشلة)</option>
+                                <option value="41 — Souk Ahras">41 — Souk Ahras (سوق أهراس)</option>
+                                <option value="42 — Tipaza">42 — Tipaza (تيبازة)</option>
+                                <option value="43 — Mila">43 — Mila (ميلة)</option>
+                                <option value="44 — Aïn Defla">44 — Aïn Defla (عين الدفلى)</option>
+                                <option value="46 — Aïn Témouchent">46 — Aïn Témouchent (عين تموشنت)</option>
+                                <option value="47 — Ghardaïa">47 — Ghardaïa (غرداية)</option>
+                                <option value="48 — Relizane">48 — Relizane (غليزان)</option>
+                                <option value="51 — Ouled Djellal">51 — Ouled Djellal (أولاد جلال)</option>
+                                <option value="55 — Touggourt">55 — Touggourt (تقرت)</option>
+                                <option value="57 — El M’Ghair">57 — El M’Ghair (المغير)</option>
+                                <option value="58 — El Meniaa">58 — El Meniaa (المنيعة)</option>
+                                <option value="59 — Aflou">59 — Aflou (آفلو)</option>
+                                <option value="60 — Barika">60 — Barika (بريكة)</option>
+                                <option value="64 — Ksar Chellala">64 — Ksar Chellala (قصر الشلالة)</option>
+                                <option value="65 — Aïn Oussera">65 — Aïn Oussera (عين وسارة)</option>
+                                <option value="66 — Messaad">66 — Messaad (مسعد)</option>
+                                <option value="68 — Boussaâda">68 — Boussaâda (بوسعادة)</option>
+                            </select>
                         </div>
                         
                         <div class="form-group">
@@ -1148,10 +1246,20 @@
             for (const field of requiredFields) {
                 const input = document.getElementById(field);
                 if (!input.value.trim()) {
-                    alert(`يرجى ملء حقل ${input.previousElementSibling.textContent.trim()}`);
+                    let fieldName = input.previousElementSibling.textContent.trim();
+                    if (field === 'state') fieldName = 'الولاية';
+                    alert(`يرجى ملء حقل ${fieldName}`);
                     input.focus();
                     return;
                 }
+            }
+            
+            // تحقق من اختيار ولاية صحيحة (ليست القيمة الافتراضية)
+            const stateSelect = document.getElementById('state');
+            if (!stateSelect.value) {
+                alert('يرجى اختيار ولايتك من القائمة');
+                stateSelect.focus();
+                return;
             }
             
             // عرض مؤشر التحميل
@@ -1163,7 +1271,7 @@
             const formData = {
                 firstName: document.getElementById('firstName').value.trim(),
                 lastName: document.getElementById('lastName').value.trim(),
-                state: document.getElementById('state').value.trim(),
+                state: document.getElementById('state').value,
                 city: document.getElementById('city').value.trim(),
                 phone: cleanPhone,
                 quantity: quantity,
