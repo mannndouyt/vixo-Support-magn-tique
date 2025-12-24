@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>طلب حامل مغناطيسي قوي K007 - شحن مجاني لكل الولايات</title>
+    <title>طلب حامل مغناطيسي قوي K007</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* تعيين الخطوط والأساسيات */
@@ -282,27 +282,6 @@
             }
         }
         
-        .product-price {
-            color: #8de361;
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-        
-        @media (min-width: 768px) {
-            .product-price {
-                font-size: 1.5rem;
-            }
-        }
-        
-        .old-price {
-            text-decoration: line-through;
-            color: #a4f0d7;
-            font-size: 1rem;
-            margin-left: 8px;
-            opacity: 0.7;
-        }
-        
         .discount-badge {
             background: #52c244;
             color: #091209;
@@ -312,16 +291,6 @@
             font-size: 0.85rem;
             display: inline-block;
             margin-right: 8px;
-        }
-        
-        .shipping-note {
-            color: #83ecce;
-            font-size: 0.85rem;
-            margin-top: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
         }
         
         .stock-status {
@@ -477,6 +446,12 @@
             margin-top: 8px;
         }
         
+        .shipping-price {
+            color: #83ecce;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
         .submit-btn {
             background: linear-gradient(to right, #52c244, #6ce084);
             color: #091209;
@@ -572,7 +547,7 @@
             margin-bottom: 15px;
         }
         
-        /* شارات الضمان (محدثة) */
+        /* شارات الضمان */
         .guarantee-badges {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -871,13 +846,6 @@
                         <div class="product-name">حامل مغناطيسي قوي K007</div>
                         <div>
                             <span class="discount-badge">خصم 26%</span>
-                            <span class="product-price">2500.00 DA</span>
-                            <span class="old-price">3400.00 DA</span>
-                        </div>
-                        
-                        <div class="shipping-note">
-                            <i class="fas fa-truck"></i>
-                            <span>الشحن مجاني لكل الولايات - التوصيل خلال 2-5 أيام</span>
                         </div>
                         
                         <div class="stock-status">
@@ -901,56 +869,59 @@
                             <label for="state">الولاية <span style="color: #8de361;">*</span></label>
                             <select id="state" name="state" required class="state-select">
                                 <option value="" disabled selected>اختر ولايتك</option>
-                                <option value="03 — Laghouat">03 — Laghouat (الأغواط)</option>
-                                <option value="04 — Oum El Bouaghi">04 — Oum El Bouaghi (أم البواقي)</option>
-                                <option value="05 — Batna">05 — Batna (باتنة)</option>
-                                <option value="06 — Béjaïa">06 — Béjaïa (بجاية)</option>
-                                <option value="07 — Biskra">07 — Biskra (بسكرة)</option>
-                                <option value="09 — Blida">09 — Blida (البليدة)</option>
-                                <option value="10 — Bouira">10 — Bouira (البويرة)</option>
-                                <option value="12 — Tébessa">12 — Tébessa (تبسة)</option>
-                                <option value="13 — Tlemcen">13 — Tlemcen (تلمسان)</option>
-                                <option value="14 — Tiaret">14 — Tiaret (تيارت)</option>
-                                <option value="15 — Tizi Ouzou">15 — Tizi Ouzou (تيزي وزو)</option>
-                                <option value="16 — Alger">16 — Alger (الجزائر)</option>
-                                <option value="17 — Djelfa">17 — Djelfa (الجلفة)</option>
-                                <option value="18 — Jijel">18 — Jijel (جيجل)</option>
-                                <option value="19 — Sétif">19 — Sétif (سطيف)</option>
-                                <option value="20 — Saïda">20 — Saïda (سعيدة)</option>
-                                <option value="21 — Skikda">21 — Skikda (سكيكدة)</option>
-                                <option value="22 — Sidi Bel Abbès">22 — Sidi Bel Abbès (سيدي بلعباس)</option>
-                                <option value="23 — Annaba">23 — Annaba (عنابة)</option>
-                                <option value="24 — Guelma">24 — Guelma (قالمة)</option>
-                                <option value="25 — Constantine">25 — Constantine (قسنطينة)</option>
-                                <option value="26 — Médéa">26 — Médéa (المدية)</option>
-                                <option value="27 — Mostaganem">27 — Mostaganem (مستغانم)</option>
-                                <option value="28 — M’sila">28 — M’sila (المسيلة)</option>
-                                <option value="29 — Mascara">29 — Mascara (معسكر)</option>
-                                <option value="30 — Ouargla">30 — Ouargla (ورقلة)</option>
-                                <option value="31 — Oran">31 — Oran (وهران)</option>
-                                <option value="34 — Bordj Bou Arréridj">34 — Bordj Bou Arréridj (برج بوعريريج)</option>
-                                <option value="35 — Boumerdès">35 — Boumerdès (بومرداس)</option>
-                                <option value="36 — El Tarf">36 — El Tarf (الطارف)</option>
-                                <option value="38 — Tissemsilt">38 — Tissemsilt (تيسمسيلت)</option>
-                                <option value="39 — El Oued">39 — El Oued (الوادي)</option>
-                                <option value="40 — Khenchela">40 — Khenchela (خنشلة)</option>
-                                <option value="41 — Souk Ahras">41 — Souk Ahras (سوق أهراس)</option>
-                                <option value="42 — Tipaza">42 — Tipaza (تيبازة)</option>
-                                <option value="43 — Mila">43 — Mila (ميلة)</option>
-                                <option value="44 — Aïn Defla">44 — Aïn Defla (عين الدفلى)</option>
-                                <option value="46 — Aïn Témouchent">46 — Aïn Témouchent (عين تموشنت)</option>
-                                <option value="47 — Ghardaïa">47 — Ghardaïa (غرداية)</option>
-                                <option value="48 — Relizane">48 — Relizane (غليزان)</option>
-                                <option value="51 — Ouled Djellal">51 — Ouled Djellal (أولاد جلال)</option>
-                                <option value="55 — Touggourt">55 — Touggourt (تقرت)</option>
-                                <option value="57 — El M’Ghair">57 — El M’Ghair (المغير)</option>
-                                <option value="58 — El Meniaa">58 — El Meniaa (المنيعة)</option>
-                                <option value="59 — Aflou">59 — Aflou (آفلو)</option>
-                                <option value="60 — Barika">60 — Barika (بريكة)</option>
-                                <option value="64 — Ksar Chellala">64 — Ksar Chellala (قصر الشلالة)</option>
-                                <option value="65 — Aïn Oussera">65 — Aïn Oussera (عين وسارة)</option>
-                                <option value="66 — Messaad">66 — Messaad (مسعد)</option>
-                                <option value="68 — Boussaâda">68 — Boussaâda (بوسعادة)</option>
+                                <option value="Msila">Msila - 400 DA</option>
+                                <option value="Bordj Bou Arreridj">Bordj Bou Arreridj - 450 DA</option>
+                                <option value="Setif">Setif - 450 DA</option>
+                                <option value="Alger">Alger - 450 DA</option>
+                                <option value="Annaba">Annaba - 500 DA</option>
+                                <option value="Batna">Batna - 500 DA</option>
+                                <option value="Bejaia">Bejaia - 500 DA</option>
+                                <option value="Blida">Blida - 500 DA</option>
+                                <option value="Bouira">Bouira - 500 DA</option>
+                                <option value="Boumerdes">Boumerdes - 500 DA</option>
+                                <option value="Constantine">Constantine - 500 DA</option>
+                                <option value="Jijel">Jijel - 500 DA</option>
+                                <option value="Khenchela">Khenchela - 500 DA</option>
+                                <option value="Medea">Medea - 500 DA</option>
+                                <option value="Mila">Mila - 500 DA</option>
+                                <option value="Oum El Bouaghi">Oum El Bouaghi - 500 DA</option>
+                                <option value="Skikda">Skikda - 500 DA</option>
+                                <option value="Tipaza">Tipaza - 500 DA</option>
+                                <option value="Tizi Ouzou">Tizi Ouzou - 500 DA</option>
+                                <option value="Ain Defla">Ain Defla - 500 DA</option>
+                                <option value="Chlef">Chlef - 500 DA</option>
+                                <option value="Mostaganem">Mostaganem - 500 DA</option>
+                                <option value="Oran">Oran - 500 DA</option>
+                                <option value="Ain Temouchent">Ain Temouchent - 500 DA</option>
+                                <option value="Mascara">Mascara - 500 DA</option>
+                                <option value="Relizane">Relizane - 500 DA</option>
+                                <option value="Sidi Bel Abbes">Sidi Bel Abbes - 500 DA</option>
+                                <option value="Tissemsilt">Tissemsilt - 500 DA</option>
+                                <option value="El Tarf">El Tarf - 600 DA</option>
+                                <option value="Guelma">Guelma - 600 DA</option>
+                                <option value="Souk Ahras">Souk Ahras - 600 DA</option>
+                                <option value="Tebessa">Tebessa - 600 DA</option>
+                                <option value="Saida">Saida - 600 DA</option>
+                                <option value="Tiaret">Tiaret - 600 DA</option>
+                                <option value="Tlemcen">Tlemcen - 600 DA</option>
+                                <option value="Biskra">Biskra - 600 DA</option>
+                                <option value="Djelfa">Djelfa - 600 DA</option>
+                                <option value="Laghouat">Laghouat - 600 DA</option>
+                                <option value="El Oued">El Oued - 700 DA</option>
+                                <option value="El M'Ghair">El M'Ghair - 700 DA</option>
+                                <option value="Ghardaia">Ghardaia - 700 DA</option>
+                                <option value="El Meniaa">El Meniaa - 700 DA</option>
+                                <option value="Ouargla">Ouargla - 700 DA</option>
+                                <option value="Touggourt">Touggourt - 700 DA</option>
+                                <option value="Bechar">Bechar - 800 DA</option>
+                                <option value="El Bayadh">El Bayadh - 800 DA</option>
+                                <option value="Naama">Naama - 800 DA</option>
+                                <option value="Adrar">Adrar - 1,000 DA</option>
+                                <option value="Timimoun">Timimoun - 1,000 DA</option>
+                                <option value="Tindouf">Tindouf - 1,000 DA</option>
+                                <option value="In Salah">In Salah - 1,200 DA</option>
+                                <option value="Illizi">Illizi - 1,500 DA</option>
+                                <option value="Tamanrasset">Tamanrasset - 1,500 DA</option>
                             </select>
                         </div>
                         
@@ -977,8 +948,8 @@
                             
                             <div class="price-calc">
                                 <div class="price-info">السعر الإجمالي:</div>
-                                <div class="total-price" id="totalPrice">2500.00 DA</div>
-                                <div style="color: #83ecce; font-size: 0.85rem; margin-top: 5px;">يشمل الشحن المجاني</div>
+                                <div class="total-price" id="totalPrice">0.00 DA</div>
+                                <div class="shipping-price" id="shippingPrice">اختر الولاية لحساب السعر الإجمالي</div>
                             </div>
                         </div>
                         
@@ -1068,18 +1039,18 @@
             </div>
         </div>
         
-        <!-- شارات الضمان (محدثة - حذف دعم فني وضمان 6 أشهر) -->
+        <!-- شارات الضمان -->
         <div class="guarantee-badges">
-            <div class="guarantee-badge">
-                <i class="fas fa-shipping-fast"></i>
-                <h4>شحن مجاني</h4>
-                <p>لكل الولايات</p>
-            </div>
-            
             <div class="guarantee-badge">
                 <i class="fas fa-undo-alt"></i>
                 <h4>إرجاع سهل</h4>
                 <p>خلال 7 أيام</p>
+            </div>
+            
+            <div class="guarantee-badge">
+                <i class="fas fa-shipping-fast"></i>
+                <h4>توصيل سريع</h4>
+                <p>لكل الولايات</p>
             </div>
         </div>
         
@@ -1090,26 +1061,101 @@
     </div>
 
     <script>
-        // التحكم في الكمية والسعر
-        const basePrice = 2500.00;
-        const additionalPrice = 2000.00;
+        // أسعار المنتج والشحن
+        const basePrice = 1800.00;
+        const additionalPrice = 1700.00;
+        
+        // أسعار الشحن حسب الولايات (باللغة الإنجليزية)
+        const shippingPrices = {
+            "Msila": 400,
+            "Bordj Bou Arreridj": 450,
+            "Setif": 450,
+            "Alger": 450,
+            "Annaba": 500,
+            "Batna": 500,
+            "Bejaia": 500,
+            "Blida": 500,
+            "Bouira": 500,
+            "Boumerdes": 500,
+            "Constantine": 500,
+            "Jijel": 500,
+            "Khenchela": 500,
+            "Medea": 500,
+            "Mila": 500,
+            "Oum El Bouaghi": 500,
+            "Skikda": 500,
+            "Tipaza": 500,
+            "Tizi Ouzou": 500,
+            "Ain Defla": 500,
+            "Chlef": 500,
+            "Mostaganem": 500,
+            "Oran": 500,
+            "Ain Temouchent": 500,
+            "Mascara": 500,
+            "Relizane": 500,
+            "Sidi Bel Abbes": 500,
+            "Tissemsilt": 500,
+            "El Tarf": 600,
+            "Guelma": 600,
+            "Souk Ahras": 600,
+            "Tebessa": 600,
+            "Saida": 600,
+            "Tiaret": 600,
+            "Tlemcen": 600,
+            "Biskra": 600,
+            "Djelfa": 600,
+            "Laghouat": 600,
+            "El Oued": 700,
+            "El M'Ghair": 700,
+            "Ghardaia": 700,
+            "El Meniaa": 700,
+            "Ouargla": 700,
+            "Touggourt": 700,
+            "Bechar": 800,
+            "El Bayadh": 800,
+            "Naama": 800,
+            "Adrar": 1000,
+            "Timimoun": 1000,
+            "Tindouf": 1000,
+            "In Salah": 1200,
+            "Illizi": 1500,
+            "Tamanrasset": 1500
+        };
+        
         let quantity = 1;
+        let selectedState = "";
+        let shippingPrice = 0;
         
         const quantityDisplay = document.getElementById('quantityDisplay');
         const quantityInput = document.getElementById('quantity');
         const totalPriceElement = document.getElementById('totalPrice');
+        const shippingPriceElement = document.getElementById('shippingPrice');
         const decreaseBtn = document.getElementById('decreaseQty');
         const increaseBtn = document.getElementById('increaseQty');
+        const stateSelect = document.getElementById('state');
         const loadingElement = document.getElementById('loading');
         const submitBtn = document.getElementById('submitBtn');
         const confirmationMessage = document.getElementById('confirmationMessage');
         
         function updatePrice() {
-            let totalPrice = basePrice;
+            // حساب سعر المنتج
+            let productPrice = basePrice;
             if (quantity > 1) {
-                totalPrice += (quantity - 1) * additionalPrice;
+                productPrice += (quantity - 1) * additionalPrice;
             }
             
+            // حساب السعر الإجمالي
+            let totalPrice = productPrice;
+            if (selectedState && shippingPrices[selectedState]) {
+                shippingPrice = shippingPrices[selectedState];
+                totalPrice += shippingPrice;
+                shippingPriceElement.textContent = `سعر المنتج: ${productPrice.toFixed(2)} DA + الشحن: ${shippingPrice.toFixed(2)} DA`;
+            } else {
+                shippingPrice = 0;
+                shippingPriceElement.textContent = "اختر الولاية لحساب السعر الإجمالي";
+            }
+            
+            // تحديث العرض
             quantityDisplay.textContent = quantity;
             quantityInput.value = quantity;
             totalPriceElement.textContent = totalPrice.toFixed(2) + ' DA';
@@ -1131,6 +1177,12 @@
         
         increaseBtn.addEventListener('click', () => {
             quantity++;
+            updatePrice();
+        });
+        
+        // استماع لتغيير الولاية
+        stateSelect.addEventListener('change', function() {
+            selectedState = this.options[this.selectedIndex].text.split(' - ')[0];
             updatePrice();
         });
         
@@ -1229,6 +1281,13 @@
         document.getElementById('orderForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
+            // التحقق من اختيار الولاية
+            if (!selectedState) {
+                alert('يرجى اختيار ولايتك من القائمة');
+                stateSelect.focus();
+                return;
+            }
+            
             // التحقق من صحة رقم الهاتف
             const phoneInput = document.getElementById('phone').value.trim();
             const phoneRegex = /^0[5-7][0-9]{8}$/;
@@ -1242,24 +1301,15 @@
             }
             
             // التحقق من بقية الحقول
-            const requiredFields = ['firstName', 'lastName', 'state', 'city'];
+            const requiredFields = ['firstName', 'lastName', 'city'];
             for (const field of requiredFields) {
                 const input = document.getElementById(field);
                 if (!input.value.trim()) {
                     let fieldName = input.previousElementSibling.textContent.trim();
-                    if (field === 'state') fieldName = 'الولاية';
                     alert(`يرجى ملء حقل ${fieldName}`);
                     input.focus();
                     return;
                 }
-            }
-            
-            // تحقق من اختيار ولاية صحيحة (ليست القيمة الافتراضية)
-            const stateSelect = document.getElementById('state');
-            if (!stateSelect.value) {
-                alert('يرجى اختيار ولايتك من القائمة');
-                stateSelect.focus();
-                return;
             }
             
             // عرض مؤشر التحميل
@@ -1267,15 +1317,24 @@
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>جاري الإرسال...</span>';
             loadingElement.style.display = 'block';
             
+            // حساب السعر الإجمالي النهائي
+            let productPrice = basePrice;
+            if (quantity > 1) {
+                productPrice += (quantity - 1) * additionalPrice;
+            }
+            const totalPriceValue = productPrice + shippingPrice;
+            
             // جمع بيانات النموذج
             const formData = {
                 firstName: document.getElementById('firstName').value.trim(),
                 lastName: document.getElementById('lastName').value.trim(),
-                state: document.getElementById('state').value,
+                state: selectedState,
                 city: document.getElementById('city').value.trim(),
                 phone: cleanPhone,
                 quantity: quantity,
-                totalPrice: parseFloat(totalPriceElement.textContent),
+                productPrice: productPrice,
+                shippingPrice: shippingPrice,
+                totalPrice: totalPriceValue,
                 timestamp: new Date().toLocaleString('ar-EG'),
                 deviceType: /Mobi|Android/i.test(navigator.userAgent) ? 'هاتف' : 'كمبيوتر'
             };
@@ -1300,6 +1359,8 @@
                     // إعادة تعيين النموذج (خفي)
                     document.getElementById('orderForm').reset();
                     quantity = 1;
+                    selectedState = "";
+                    shippingPrice = 0;
                     updatePrice();
                     
                 } else {
