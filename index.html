@@ -1061,13 +1061,13 @@
     </div>
 
     <script>
-        // أسعار المنتج والشحن
+        // أسعار المنتج والشحن - مصححة
         const basePrice = 1800.00;
         const additionalPrice = 1700.00;
         
-        // أسعار الشحن حسب الولايات (باللغة الإنجليزية)
+        // أسعار الشحن حسب الولايات (يجب أن تتطابق مع value في الخيارات)
         const shippingPrices = {
-            "Msila": 400,
+            "M'Sila": 400,
             "Bordj Bou Arreridj": 450,
             "Setif": 450,
             "Alger": 450,
@@ -1137,6 +1137,7 @@
         const submitBtn = document.getElementById('submitBtn');
         const confirmationMessage = document.getElementById('confirmationMessage');
         
+        // دالة حساب وتحديث السعر المصححة
         function updatePrice() {
             // حساب سعر المنتج
             let productPrice = basePrice;
@@ -1146,19 +1147,26 @@
             
             // حساب السعر الإجمالي
             let totalPrice = productPrice;
+            
             if (selectedState && shippingPrices[selectedState]) {
                 shippingPrice = shippingPrices[selectedState];
                 totalPrice += shippingPrice;
-                shippingPriceElement.textContent = `سعر المنتج: ${productPrice.toFixed(2)} DA + الشحن: ${shippingPrice.toFixed(2)} DA`;
+                
+                // عرض تفاصيل السعر بدون ذكر القطع الإضافية
+                shippingPriceElement.textContent = `سعر المنتجات: ${productPrice.toFixed(0)} DA + الشحن: ${shippingPrice.toFixed(0)} DA`;
             } else {
                 shippingPrice = 0;
-                shippingPriceElement.textContent = "اختر الولاية لحساب السعر الإجمالي";
+                if (selectedState) {
+                    shippingPriceElement.textContent = "سعر الشحن غير محدد لهذه الولاية";
+                } else {
+                    shippingPriceElement.textContent = "اختر الولاية لحساب السعر الإجمالي";
+                }
             }
             
             // تحديث العرض
             quantityDisplay.textContent = quantity;
             quantityInput.value = quantity;
-            totalPriceElement.textContent = totalPrice.toFixed(2) + ' DA';
+            totalPriceElement.textContent = totalPrice.toFixed(0) + ' DA';
             
             // تحديث نص زر الطلب بناءً على الكمية
             if (quantity > 1) {
@@ -1168,6 +1176,7 @@
             }
         }
         
+        // أحداث الأزرار للكمية
         decreaseBtn.addEventListener('click', () => {
             if (quantity > 1) {
                 quantity--;
@@ -1182,7 +1191,7 @@
         
         // استماع لتغيير الولاية
         stateSelect.addEventListener('change', function() {
-            selectedState = this.options[this.selectedIndex].text.split(' - ')[0];
+            selectedState = this.value;
             updatePrice();
         });
         
@@ -1317,7 +1326,7 @@
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>جاري الإرسال...</span>';
             loadingElement.style.display = 'block';
             
-            // حساب السعر الإجمالي النهائي
+            // حساب السعر الإجمالي النهائي بشكل صحيح
             let productPrice = basePrice;
             if (quantity > 1) {
                 productPrice += (quantity - 1) * additionalPrice;
