@@ -1062,8 +1062,7 @@
 
     <script>
         // أسعار المنتج والشحن - مصححة
-        const basePrice = 1800.00;
-        const additionalPrice = 1700.00;
+        const basePrice = 1800.00; // سعر القطعة الواحدة
         
         // أسعار الشحن حسب الولايات (يجب أن تتطابق مع value في الخيارات)
         const shippingPrices = {
@@ -1139,11 +1138,8 @@
         
         // دالة حساب وتحديث السعر المصححة
         function updatePrice() {
-            // حساب سعر المنتج
-            let productPrice = basePrice;
-            if (quantity > 1) {
-                productPrice += (quantity - 1) * additionalPrice;
-            }
+            // حساب سعر المنتج: 1800 * الكمية
+            let productPrice = basePrice * quantity;
             
             // حساب السعر الإجمالي
             let totalPrice = productPrice;
@@ -1152,8 +1148,12 @@
                 shippingPrice = shippingPrices[selectedState];
                 totalPrice += shippingPrice;
                 
-                // عرض تفاصيل السعر بدون ذكر القطع الإضافية
-                shippingPriceElement.textContent = `سعر المنتجات: ${productPrice.toFixed(0)} DA + الشحن: ${shippingPrice.toFixed(0)} DA`;
+                // عرض تفاصيل السعر
+                if (quantity === 1) {
+                    shippingPriceElement.textContent = `سعر المنتج: ${productPrice.toFixed(0)} DA + الشحن: ${shippingPrice.toFixed(0)} DA`;
+                } else {
+                    shippingPriceElement.textContent = `سعر ${quantity} قطع: ${productPrice.toFixed(0)} DA + الشحن: ${shippingPrice.toFixed(0)} DA`;
+                }
             } else {
                 shippingPrice = 0;
                 if (selectedState) {
@@ -1327,10 +1327,7 @@
             loadingElement.style.display = 'block';
             
             // حساب السعر الإجمالي النهائي بشكل صحيح
-            let productPrice = basePrice;
-            if (quantity > 1) {
-                productPrice += (quantity - 1) * additionalPrice;
-            }
+            let productPrice = basePrice * quantity;
             const totalPriceValue = productPrice + shippingPrice;
             
             // جمع بيانات النموذج
