@@ -484,6 +484,56 @@
             box-shadow: 0 8px 20px rgba(108, 224, 132, 0.4);
         }
         
+        /* ملاحظة التفاوض */
+        .negotiation-note {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid #ffc107;
+            border-radius: 10px;
+            padding: 18px;
+            margin-top: 18px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .negotiation-note:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.2);
+        }
+        
+        .negotiation-note p:first-child {
+            color: #ffc107;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .negotiation-note p:nth-child(2) {
+            color: #f8f9fa;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 5px;
+            transition: all 0.3s;
+        }
+        
+        .instagram-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(225, 48, 108, 0.4);
+        }
+        
         .loading {
             display: none;
             text-align: center;
@@ -736,6 +786,15 @@
             .feature-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .negotiation-note {
+                padding: 15px;
+            }
+            
+            .instagram-link {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
         }
         
         @media (min-width: 577px) and (max-width: 768px) {
@@ -975,6 +1034,18 @@
                             <i class="fas fa-paper-plane"></i>
                             <span>تأكيد الطلب الآن</span>
                         </button>
+                        
+                        <!-- ملاحظة التفاوض المضافة -->
+                        <div class="negotiation-note">
+                            <p><i class="fas fa-comments-dollar" style="margin-left: 5px;"></i> ملاحظة هامة:</p>
+                            <p>إذا وجدت السعر غاليًا، راسلني على الإنستغرام للتفاوض على سعر أفضل</p>
+                            <a href="https://www.instagram.com/vixo._store/" 
+                               target="_blank" 
+                               class="instagram-link">
+                                <i class="fab fa-instagram"></i>
+                                راسلني على الإنستغرام
+                            </a>
+                        </div>
                         
                         <div style="text-align: center; margin-top: 12px; color: #83ecce; font-size: 0.85rem;">
                             <i class="fas fa-lock" style="margin-left: 5px;"></i>
