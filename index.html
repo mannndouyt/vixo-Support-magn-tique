@@ -17,7 +17,7 @@
         }
         
         body {
-            background-color: #091209;
+            background: linear-gradient(135deg, #0a1a0a 0%, #091209 50%, #0c150c 100%);
             color: #a4f0d7;
             line-height: 1.6;
             padding: 15px;
@@ -27,6 +27,21 @@
             align-items: flex-start;
             overflow-x: hidden;
             -webkit-tap-highlight-color: transparent;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(108, 224, 132, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(82, 194, 68, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
         }
         
         .container {
@@ -41,35 +56,60 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: linear-gradient(to bottom, #143214, #0e1c0c);
+            background: linear-gradient(135deg, #143214 0%, #0e1c0c 100%);
             border-radius: 0 0 15px 15px;
             padding: 15px 20px;
             margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            border: 1px solid #364836;
+            box-shadow: 
+                0 4px 15px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(108, 224, 132, 0.1);
+            border: 1px solid #2a4a2a;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
         
         .logo {
             font-size: 1.4rem;
             font-weight: bold;
             color: #8de361;
+            text-shadow: 0 0 10px rgba(141, 227, 97, 0.3);
+            position: relative;
+            padding-right: 15px;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 70%;
+            background: linear-gradient(to bottom, #52c244, #6ce084);
+            border-radius: 2px;
         }
         
         .phone-contact {
             display: flex;
             align-items: center;
             gap: 10px;
-            background: rgba(36, 72, 54, 0.5);
-            padding: 8px 15px;
+            background: linear-gradient(135deg, rgba(36, 72, 54, 0.8) 0%, rgba(52, 104, 78, 0.8) 100%);
+            padding: 8px 20px;
             border-radius: 50px;
-            border: 1px solid #71938e;
+            border: 1px solid #6ce084;
+            box-shadow: 
+                0 0 15px rgba(108, 224, 132, 0.2),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
         }
         
         .phone-contact i {
             color: #6ce084;
+            filter: drop-shadow(0 0 5px rgba(108, 224, 132, 0.5));
         }
         
         .content-wrapper {
@@ -93,11 +133,13 @@
         }
         
         .image-gallery {
-            background: linear-gradient(to bottom, #143214, #0e1c0c);
+            background: linear-gradient(135deg, #143214 0%, #0e1c0c 100%);
             border-radius: 15px;
             padding: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            border: 1px solid #364836;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.5),
+                0 0 25px rgba(108, 224, 132, 0.1);
+            border: 1px solid #2a4a2a;
             margin-bottom: 20px;
             overflow: hidden;
             position: relative;
@@ -112,15 +154,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(10, 18, 9, 0.5);
+            background: linear-gradient(135deg, rgba(10, 18, 9, 0.5) 0%, rgba(14, 28, 12, 0.8) 100%);
             touch-action: pan-y pinch-zoom;
+            border: 1px solid #364836;
+            box-shadow: 
+                inset 0 2px 10px rgba(0, 0, 0, 0.5),
+                0 5px 20px rgba(0, 0, 0, 0.3);
         }
         
         .main-image {
             width: 400px;
             height: 400px;
             object-fit: contain;
-            transition: transform 0.5s ease;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.5));
         }
         
         /* أزرار التنقل بين الصور */
@@ -128,23 +174,22 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(36, 72, 54, 0.8);
+            background: linear-gradient(135deg, rgba(36, 72, 54, 0.9) 0%, rgba(52, 104, 78, 0.9) 100%);
             color: #fff;
             border: none;
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             font-size: 1.2rem;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s;
             z-index: 10;
-        }
-        
-        .nav-btn:hover {
-            background: rgba(108, 224, 132, 0.8);
+            box-shadow: 
+                0 4px 15px rgba(0, 0, 0, 0.3),
+                0 0 10px rgba(108, 224, 132, 0.2);
+            border: 1px solid #6ce084;
         }
         
         .prev-btn {
@@ -157,8 +202,8 @@
         
         @media (max-width: 768px) {
             .nav-btn {
-                width: 36px;
-                height: 36px;
+                width: 38px;
+                height: 38px;
                 font-size: 1.1rem;
             }
             
@@ -187,9 +232,9 @@
             overflow: hidden;
             cursor: pointer;
             border: 2px solid transparent;
-            transition: all 0.3s;
             opacity: 0.8;
             flex-shrink: 0;
+            position: relative;
         }
         
         @media (min-width: 768px) {
@@ -206,14 +251,12 @@
             }
         }
         
-        .thumbnail:hover {
-            opacity: 1;
-            transform: translateY(-3px);
-        }
-        
         .thumbnail.active {
             border-color: #6ce084;
             opacity: 1;
+            box-shadow: 
+                0 0 15px rgba(108, 224, 132, 0.4),
+                inset 0 0 10px rgba(108, 224, 132, 0.2);
         }
         
         .thumbnail img {
@@ -239,11 +282,13 @@
         }
         
         .order-form {
-            background: linear-gradient(to bottom, #143214, #0e1c0c);
+            background: linear-gradient(135deg, #143214 0%, #0e1c0c 100%);
             border-radius: 15px;
             padding: 25px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            border: 1px solid #364836;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.5),
+                0 0 25px rgba(108, 224, 132, 0.1);
+            border: 1px solid #2a4a2a;
         }
         
         .form-title {
@@ -253,6 +298,21 @@
             text-align: center;
             padding-bottom: 12px;
             border-bottom: 2px solid #406255;
+            position: relative;
+            text-shadow: 0 0 10px rgba(141, 227, 97, 0.3);
+        }
+        
+        .form-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(to left, #52c244, #6ce084);
+            border-radius: 1px;
+            left: 50%;
+            transform: translateX(-50%);
         }
         
         @media (min-width: 768px) {
@@ -262,18 +322,34 @@
         }
         
         .product-info {
-            background: rgba(36, 72, 54, 0.5);
+            background: linear-gradient(135deg, rgba(36, 72, 54, 0.6) 0%, rgba(52, 104, 78, 0.6) 100%);
             border-radius: 10px;
             padding: 15px;
             margin-bottom: 20px;
-            border: 1px solid #71938e;
+            border: 1px solid #6ce084;
             text-align: center;
+            box-shadow: 
+                0 5px 15px rgba(0, 0, 0, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #52c244, #6ce084);
         }
         
         .product-name {
             color: #a2eb84;
             font-size: 1.2rem;
             margin-bottom: 8px;
+            text-shadow: 0 0 5px rgba(162, 235, 132, 0.3);
         }
         
         @media (min-width: 768px) {
@@ -283,18 +359,21 @@
         }
         
         .discount-badge {
-            background: #52c244;
+            background: linear-gradient(135deg, #52c244 0%, #6ce084 100%);
             color: #091209;
-            padding: 4px 8px;
+            padding: 6px 15px;
             border-radius: 20px;
             font-weight: bold;
             font-size: 0.85rem;
             display: inline-block;
             margin-right: 8px;
+            box-shadow: 
+                0 4px 10px rgba(82, 194, 68, 0.3),
+                0 0 10px rgba(108, 224, 132, 0.2);
         }
         
         .stock-status {
-            background: rgba(108, 224, 132, 0.1);
+            background: linear-gradient(135deg, rgba(108, 224, 132, 0.15) 0%, rgba(82, 194, 68, 0.15) 100%);
             border: 1px solid #6ce084;
             border-radius: 8px;
             padding: 8px;
@@ -304,6 +383,9 @@
             justify-content: center;
             gap: 8px;
             font-size: 0.9rem;
+            box-shadow: 
+                inset 0 1px 1px rgba(255, 255, 255, 0.1),
+                0 2px 5px rgba(0, 0, 0, 0.2);
         }
         
         .form-group {
@@ -321,30 +403,33 @@
         input {
             width: 100%;
             padding: 12px 14px;
-            background-color: #25361a;
+            background: linear-gradient(135deg, #25361a 0%, #1a2914 100%);
             border: 1px solid #587d68;
             border-radius: 8px;
             color: #fff;
             font-size: 1rem;
-            transition: all 0.3s;
+            box-shadow: 
+                inset 0 2px 5px rgba(0, 0, 0, 0.3),
+                0 1px 1px rgba(255, 255, 255, 0.05);
         }
         
         input:focus {
             outline: none;
             border-color: #6ce084;
-            box-shadow: 0 0 0 2px rgba(108, 224, 132, 0.3);
+            box-shadow: 
+                0 0 0 2px rgba(108, 224, 132, 0.3),
+                inset 0 2px 5px rgba(0, 0, 0, 0.3);
         }
         
         /* تنسيق القائمة المنسدلة للولايات */
         .state-select {
             width: 100%;
             padding: 12px 14px;
-            background-color: #25361a;
+            background: linear-gradient(135deg, #25361a 0%, #1a2914 100%);
             border: 1px solid #587d68;
             border-radius: 8px;
             color: #fff;
             font-size: 1rem;
-            transition: all 0.3s;
             cursor: pointer;
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -355,12 +440,17 @@
             background-size: 12px;
             padding-left: 40px;
             text-align: right;
+            box-shadow: 
+                inset 0 2px 5px rgba(0, 0, 0, 0.3),
+                0 1px 1px rgba(255, 255, 255, 0.05);
         }
         
         .state-select:focus {
             outline: none;
             border-color: #6ce084;
-            box-shadow: 0 0 0 2px rgba(108, 224, 132, 0.3);
+            box-shadow: 
+                0 0 0 2px rgba(108, 224, 132, 0.3),
+                inset 0 2px 5px rgba(0, 0, 0, 0.3);
         }
         
         .state-select option {
@@ -369,17 +459,17 @@
             padding: 10px;
         }
         
-        /* تغيير لون السهم للقائمة المنسدلة */
-        select::-ms-expand {
-            display: none;
-        }
-        
+        /* قسم الكمية والسعر */
         .quantity-section {
-            background: rgba(36, 72, 54, 0.5);
+            background: linear-gradient(135deg, rgba(36, 72, 54, 0.6) 0%, rgba(52, 104, 78, 0.6) 100%);
             border-radius: 10px;
             padding: 18px;
             margin: 20px 0;
-            border: 1px solid #71938e;
+            border: 1px solid #6ce084;
+            box-shadow: 
+                0 5px 15px rgba(0, 0, 0, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            position: relative;
         }
         
         .quantity-control {
@@ -390,7 +480,7 @@
         }
         
         .quantity-btn {
-            background-color: #3a5944;
+            background: linear-gradient(135deg, #3a5944 0%, #2a3f2f 100%);
             color: #fff;
             border: none;
             width: 40px;
@@ -398,11 +488,14 @@
             border-radius: 8px;
             font-size: 1.3rem;
             cursor: pointer;
-            transition: all 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            box-shadow: 
+                0 4px 10px rgba(0, 0, 0, 0.3),
+                0 0 5px rgba(108, 224, 132, 0.2);
+            border: 1px solid #587d68;
         }
         
         @media (min-width: 768px) {
@@ -412,48 +505,86 @@
             }
         }
         
-        .quantity-btn:hover {
-            background-color: #52c244;
-        }
-        
         .quantity-display {
             font-size: 1.4rem;
             color: #8de361;
             font-weight: bold;
             min-width: 50px;
             text-align: center;
+            text-shadow: 0 0 5px rgba(141, 227, 97, 0.3);
+            padding: 5px 10px;
+            background: rgba(10, 18, 9, 0.5);
+            border-radius: 8px;
+            border: 1px solid #587d68;
         }
         
+        /* تصميم السعر المحسن */
         .price-calc {
-            background: rgba(10, 18, 9, 0.7);
+            background: linear-gradient(135deg, rgba(10, 18, 9, 0.8) 0%, rgba(14, 28, 12, 0.8) 100%);
             border-radius: 10px;
             padding: 12px;
             margin-top: 15px;
             text-align: center;
-            border: 1px solid #566256;
+            border: 1px solid #6ce084;
+            box-shadow: 
+                0 5px 15px rgba(0, 0, 0, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
         }
         
         .price-info {
             color: #a4f0d7;
             font-size: 1rem;
             margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .price-label {
+            font-weight: 500;
+        }
+        
+        .price-value {
+            color: #8de361;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(141, 227, 97, 0.3);
+        }
+        
+        .total-price-container {
+            background: linear-gradient(135deg, rgba(52, 104, 78, 0.3) 0%, rgba(108, 224, 132, 0.1) 100%);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 10px;
+            border: 1px solid #6ce084;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .total-price-label {
+            color: #c4f8e4;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
         }
         
         .total-price {
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: #8de361;
             font-weight: bold;
-            margin-top: 8px;
+            text-shadow: 0 0 10px rgba(141, 227, 97, 0.5);
         }
         
         .shipping-price {
             color: #83ecce;
             font-size: 0.9rem;
-            margin-top: 5px;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #406255;
         }
         
         .submit-btn {
-            background: linear-gradient(to right, #52c244, #6ce084);
+            background: linear-gradient(135deg, #52c244 0%, #6ce084 100%);
             color: #091209;
             border: none;
             padding: 16px;
@@ -462,13 +593,16 @@
             font-size: 1.2rem;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s;
             margin-top: 15px;
-            box-shadow: 0 5px 15px rgba(108, 224, 132, 0.3);
+            box-shadow: 
+                0 5px 20px rgba(82, 194, 68, 0.4),
+                0 0 15px rgba(108, 224, 132, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
+            position: relative;
+            overflow: hidden;
         }
         
         @media (min-width: 768px) {
@@ -476,12 +610,6 @@
                 padding: 18px;
                 font-size: 1.3rem;
             }
-        }
-        
-        .submit-btn:hover {
-            background: linear-gradient(to right, #3a5944, #52c244);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(108, 224, 132, 0.4);
         }
         
         .loading {
@@ -498,6 +626,7 @@
             height: 35px;
             animation: spin 1s linear infinite;
             margin: 0 auto 8px;
+            box-shadow: 0 0 10px rgba(82, 194, 68, 0.5);
         }
         
         @keyframes spin {
@@ -509,42 +638,16 @@
         .confirmation-message {
             display: none;
             text-align: center;
-            background: rgba(36, 72, 54, 0.5);
+            background: linear-gradient(135deg, rgba(36, 72, 54, 0.6) 0%, rgba(52, 104, 78, 0.6) 100%);
             border-radius: 10px;
             padding: 25px 20px;
             margin-top: 20px;
             border: 2px solid #6ce084;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .check-icon {
-            font-size: 3.5rem;
-            color: #6ce084;
-            margin-bottom: 15px;
-            animation: scaleIn 0.5s ease 0.2s both;
-        }
-        
-        @keyframes scaleIn {
-            0% { transform: scale(0); }
-            70% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-        
-        .confirmation-title {
-            color: #8de361;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .confirmation-text {
-            color: #c4f8e4;
-            font-size: 1rem;
-            margin-bottom: 15px;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.5),
+                0 0 25px rgba(108, 224, 132, 0.3);
+            position: relative;
+            overflow: hidden;
         }
         
         /* شارات الضمان */
@@ -566,7 +669,7 @@
         }
         
         .guarantee-badge {
-            background: rgba(108, 224, 132, 0.1);
+            background: linear-gradient(135deg, rgba(108, 224, 132, 0.15) 0%, rgba(82, 194, 68, 0.15) 100%);
             border: 1px solid #6ce084;
             border-radius: 10px;
             padding: 20px 15px;
@@ -575,39 +678,21 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s;
-        }
-        
-        .guarantee-badge:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(108, 224, 132, 0.2);
-        }
-        
-        .guarantee-badge i {
-            font-size: 2.2rem;
-            color: #6ce084;
-            margin-bottom: 12px;
-        }
-        
-        .guarantee-badge h4 {
-            color: #a2eb84;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-        
-        .guarantee-badge p {
-            font-size: 0.9rem;
-            color: #c4f8e4;
+            box-shadow: 
+                0 5px 15px rgba(0, 0, 0, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
         }
         
         /* قسم المميزات بعد الاستمارة */
         .detailed-features {
-            background: linear-gradient(to bottom, #143214, #0e1c0c);
+            background: linear-gradient(135deg, #143214 0%, #0e1c0c 100%);
             border-radius: 15px;
             padding: 25px;
             margin-top: 30px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            border: 1px solid #364836;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.5),
+                0 0 25px rgba(108, 224, 132, 0.1);
+            border: 1px solid #2a4a2a;
         }
         
         .detailed-features-title {
@@ -637,13 +722,6 @@
             border-radius: 10px;
             padding: 20px;
             border: 1px solid #587d68;
-            transition: all 0.3s;
-        }
-        
-        .feature-item:hover {
-            transform: translateY(-5px);
-            border-color: #6ce084;
-            box-shadow: 0 5px 15px rgba(108, 224, 132, 0.2);
         }
         
         .feature-icon {
@@ -677,7 +755,7 @@
             border-top: 1px solid #364836;
         }
         
-        /* تصميم متجاوب إضافي */
+        /* تحسينات للاستجابة على الهواتف */
         @media (max-width: 576px) {
             body {
                 padding: 10px;
@@ -692,6 +770,12 @@
                 flex-direction: column;
                 gap: 10px;
                 text-align: center;
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+            }
+            
+            .logo::after {
+                display: none;
             }
             
             .phone-contact {
@@ -706,6 +790,10 @@
             .main-image {
                 width: 250px;
                 height: 250px;
+            }
+            
+            .total-price {
+                font-size: 1.7rem;
             }
             
             .image-gallery,
@@ -735,39 +823,6 @@
             
             .feature-grid {
                 grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (min-width: 577px) and (max-width: 768px) {
-            .main-image-container {
-                height: 300px;
-            }
-            
-            .main-image {
-                width: 300px;
-                height: 300px;
-            }
-        }
-        
-        @media (min-width: 769px) and (max-width: 992px) {
-            .main-image-container {
-                height: 350px;
-            }
-            
-            .main-image {
-                width: 350px;
-                height: 350px;
-            }
-        }
-        
-        @media (min-width: 993px) {
-            .main-image-container {
-                height: 400px;
-            }
-            
-            .main-image {
-                width: 400px;
-                height: 400px;
             }
         }
     </style>
@@ -805,33 +860,6 @@
                         </div>
                         <div class="thumbnail" data-img="https://i.ibb.co/67T6hpZF/image.jpg">
                             <img src="https://i.ibb.co/67T6hpZF/image.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 4">
-                        </div>
-                        <div class="thumbnail" data-img="https://i.ibb.co/RGSfc6BX/H5203f31f51fe45bd802c264622cf868cp.jpg">
-                            <img src="https://i.ibb.co/RGSfc6BX/H5203f31f51fe45bd802c264622cf868cp.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 5">
-                        </div>
-                        <div class="thumbnail" data-img="https://i.ibb.co/mVJ1YmqY/H50e26607871e4b3dae2b87e43b87973f0.jpg">
-                            <img src="https://i.ibb.co/mVJ1YmqY/H50e26607871e4b3dae2b87e43b87973f0.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 6">
-                        </div>
-                        <div class="thumbnail" data-img="https://i.ibb.co/pjF0hmqD/Hb33d00ec762b45839052e38086c38fe6-P.jpg">
-                            <img src="https://i.ibb.co/pjF0hmqD/Hb33d00ec762b45839052e38086c38fe6-P.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 7">
-                        </div>
-                        <div class="thumbnail" data-img="https://i.ibb.co/HfTLkL9j/Hd93f2b3453d24905a39851197530fc04c.jpg">
-                            <img src="https://i.ibb.co/HfTLkL9j/Hd93f2b3453d24905a39851197530fc04c.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 8">
-                        </div>
-                        <div class="thumbnail" data-img="https://i.ibb.co/VWzh1rw7/H6516169edef84792b2d5d50613898b35v.jpg">
-                            <img src="https://i.ibb.co/VWzh1rw7/H6516169edef84792b2d5d50613898b35v.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 9">
-                        </div>
-                        <div class="thumbnail" data-img="https://i.ibb.co/9H5hQjnh/H850dfb0e9ff849b1b073fa3a6babdb65j.jpg">
-                            <img src="https://i.ibb.co/9H5hQjnh/H850dfb0e9ff849b1b073fa3a6babdb65j.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 10">
-                        </div>
-                        <div class="thumbnail" data-img="https://i.ibb.co/35YrZNjh/Hdf14e71850a542d3af49b823646d962a-V.jpg">
-                            <img src="https://i.ibb.co/35YrZNjh/Hdf14e71850a542d3af49b823646d962a-V.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 11">
-                        </div>
-                        <div class="thumbnail" data-img="https://i.ibb.co/hR217DRD/Hd22a7d8f13a14c3c81afdf43e764987c4.png">
-                            <img src="https://i.ibb.co/hR217DRD/Hd22a7d8f13a14c3c81afdf43e764987c4.png" alt="حامل مغناطيسي قوي K007 - الصورة 12">
-                        </div>
-                        <div class="thumbnail" data-img="https://i.ibb.co/hFh0dL3J/Ha82742dca0554dda9ed6003ead845415-U.jpg">
-                            <img src="https://i.ibb.co/hFh0dL3J/Ha82742dca0554dda9ed6003ead845415-U.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 13">
                         </div>
                     </div>
                 </div>
@@ -947,9 +975,27 @@
                             </div>
                             
                             <div class="price-calc">
-                                <div class="price-info">السعر الإجمالي:</div>
-                                <div class="total-price" id="totalPrice">0.00 DA</div>
-                                <div class="shipping-price" id="shippingPrice">اختر الولاية لحساب السعر الإجمالي</div>
+                                <div class="price-info">
+                                    <span class="price-label">سعر القطعة:</span>
+                                    <span class="price-value" id="unitPrice">1500 DA</span>
+                                </div>
+                                <div class="price-info">
+                                    <span class="price-label">الكمية:</span>
+                                    <span class="price-value" id="quantityText">1</span>
+                                </div>
+                                <div class="price-info">
+                                    <span class="price-label">الشحن:</span>
+                                    <span class="price-value" id="shippingText">اختر الولاية</span>
+                                </div>
+                                
+                                <div class="total-price-container">
+                                    <div class="total-price-label">المبلغ الإجمالي</div>
+                                    <div class="total-price" id="totalPrice">0.00 DA</div>
+                                </div>
+                                
+                                <div class="shipping-price" id="shippingPrice">
+                                    التوصيل خلال 2-5 أيام عمل
+                                </div>
                             </div>
                         </div>
                         
@@ -1020,22 +1066,6 @@
                     <h4 class="feature-title">مناسب لجميع الهواتف</h4>
                     <p class="feature-desc">يعمل مع جميع هواتف الآيفون وسامسونج وهواوي وغيرها، بغض النظر عن حجم الهاتف أو سماكته.</p>
                 </div>
-                
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h4 class="feature-title">تصميم متين وعالي الجودة</h4>
-                    <p class="feature-desc">مصنوع من مواد عالية الجودة مقاومة للخدش والصدمات، ويحافظ على شكله لفترة طويلة.</p>
-                </div>
-                
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h4 class="feature-title">تركيب وإزالة سريعة</h4>
-                    <p class="feature-desc">يمكنك تركيب وإزالة هاتفك بيد واحدة وبسرعة، مما يوفر لك الوقت والجهد أثناء القيادة.</p>
-                </div>
             </div>
         </div>
         
@@ -1061,10 +1091,9 @@
     </div>
 
     <script>
-        // أسعار المنتج والشحن - مصححة
-        const basePrice = 1500.00; // سعر القطعة الواحدة
+        // أسعار المنتج والشحن
+        const basePrice = 1500.00;
         
-        // أسعار الشحن حسب الولايات (يجب أن تتطابق مع value في الخيارات)
         const shippingPrices = {
             "M'Sila": 400,
             "Bordj Bou Arreridj": 450,
@@ -1129,6 +1158,8 @@
         const quantityInput = document.getElementById('quantity');
         const totalPriceElement = document.getElementById('totalPrice');
         const shippingPriceElement = document.getElementById('shippingPrice');
+        const shippingTextElement = document.getElementById('shippingText');
+        const quantityTextElement = document.getElementById('quantityText');
         const decreaseBtn = document.getElementById('decreaseQty');
         const increaseBtn = document.getElementById('increaseQty');
         const stateSelect = document.getElementById('state');
@@ -1136,26 +1167,28 @@
         const submitBtn = document.getElementById('submitBtn');
         const confirmationMessage = document.getElementById('confirmationMessage');
         
-        // دالة حساب وتحديث السعر المصححة
+        // دالة حساب وتحديث السعر
         function updatePrice() {
-            // حساب سعر المنتج: 1500 * الكمية
             let productPrice = basePrice * quantity;
-            
-            // حساب السعر الإجمالي
             let totalPrice = productPrice;
             
             if (selectedState && shippingPrices[selectedState]) {
                 shippingPrice = shippingPrices[selectedState];
                 totalPrice += shippingPrice;
                 
-                // عرض تفاصيل السعر
+                shippingTextElement.textContent = `${shippingPrice} DA`;
+                shippingTextElement.style.color = '#6ce084';
+                
                 if (quantity === 1) {
-                    shippingPriceElement.textContent = `سعر المنتج: ${productPrice.toFixed(0)} DA + الشحن: ${shippingPrice.toFixed(0)} DA`;
+                    shippingPriceElement.textContent = `سعر المنتج: ${productPrice.toFixed(0)} DA + الشحن: ${shippingPrice} DA`;
                 } else {
-                    shippingPriceElement.textContent = `سعر ${quantity} قطع: ${productPrice.toFixed(0)} DA + الشحن: ${shippingPrice.toFixed(0)} DA`;
+                    shippingPriceElement.textContent = `سعر ${quantity} قطع: ${productPrice.toFixed(0)} DA + الشحن: ${shippingPrice} DA`;
                 }
             } else {
                 shippingPrice = 0;
+                shippingTextElement.textContent = "اختر الولاية";
+                shippingTextElement.style.color = '#a4f0d7';
+                
                 if (selectedState) {
                     shippingPriceElement.textContent = "سعر الشحن غير محدد لهذه الولاية";
                 } else {
@@ -1166,9 +1199,11 @@
             // تحديث العرض
             quantityDisplay.textContent = quantity;
             quantityInput.value = quantity;
+            quantityTextElement.textContent = quantity;
+            
             totalPriceElement.textContent = totalPrice.toFixed(0) + ' DA';
             
-            // تحديث نص زر الطلب بناءً على الكمية
+            // تحديث نص زر الطلب
             if (quantity > 1) {
                 submitBtn.querySelector('span').textContent = `طلب ${quantity} قطع الآن`;
             } else {
@@ -1204,16 +1239,7 @@
             "https://i.ibb.co/YVrxsfw/2.png",
             "https://i.ibb.co/CKYs4Gnd/3.png",
             "https://i.ibb.co/3m8XGvY7/4.png",
-            "https://i.ibb.co/67T6hpZF/image.jpg",
-            "https://i.ibb.co/RGSfc6BX/H5203f31f51fe45bd802c264622cf868cp.jpg",
-            "https://i.ibb.co/mVJ1YmqY/H50e26607871e4b3dae2b87e43b87973f0.jpg",
-            "https://i.ibb.co/pjF0hmqD/Hb33d00ec762b45839052e38086c38fe6-P.jpg",
-            "https://i.ibb.co/HfTLkL9j/Hd93f2b3453d24905a39851197530fc04c.jpg",
-            "https://i.ibb.co/VWzh1rw7/H6516169edef84792b2d5d50613898b35v.jpg",
-            "https://i.ibb.co/9H5hQjnh/H850dfb0e9ff849b1b073fa3a6babdb65j.jpg",
-            "https://i.ibb.co/35YrZNjh/Hdf14e71850a542d3af49b823646d962a-V.jpg",
-            "https://i.ibb.co/hR217DRD/Hd22a7d8f13a14c3c81afdf43e764987c4.png",
-            "https://i.ibb.co/hFh0dL3J/Ha82742dca0554dda9ed6003ead845415-U.jpg"
+            "https://i.ibb.co/67T6hpZF/image.jpg"
         ];
         
         let currentImageIndex = 0;
@@ -1225,7 +1251,7 @@
             
             mainImage.src = images[currentImageIndex];
             
-            // تحديث الصور المصغرة النشطة
+            // تحديث الصور المصغرة
             thumbnails.forEach((thumb, i) => {
                 if (i === currentImageIndex) {
                     thumb.classList.add('active');
@@ -1233,12 +1259,6 @@
                     thumb.classList.remove('active');
                 }
             });
-            
-            // إضافة تأثير تغيير الصورة
-            mainImage.style.opacity = '0.7';
-            setTimeout(() => {
-                mainImage.style.opacity = '1';
-            }, 200);
         }
         
         // أحداث أزرار التنقل
@@ -1257,9 +1277,8 @@
             });
         });
         
-        // إضافة دعم السحب باللمس للهواتف
+        // دعم السحب باللمس
         let touchStartX = 0;
-        let touchEndX = 0;
         const mainImageContainer = document.getElementById('mainImageContainer');
         
         mainImageContainer.addEventListener('touchstart', function(e) {
@@ -1267,37 +1286,29 @@
         });
         
         mainImageContainer.addEventListener('touchend', function(e) {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-        
-        function handleSwipe() {
+            const touchEndX = e.changedTouches[0].screenX;
             const swipeThreshold = 50;
             const diff = touchStartX - touchEndX;
             
             if (Math.abs(diff) > swipeThreshold) {
                 if (diff > 0) {
-                    // سحب لليسار - التالي
                     updateGallery(currentImageIndex + 1);
                 } else {
-                    // سحب لليمين - السابق
                     updateGallery(currentImageIndex - 1);
                 }
             }
-        }
+        });
         
         // معالجة نموذج الطلب
         document.getElementById('orderForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // التحقق من اختيار الولاية
             if (!selectedState) {
                 alert('يرجى اختيار ولايتك من القائمة');
                 stateSelect.focus();
                 return;
             }
             
-            // التحقق من صحة رقم الهاتف
             const phoneInput = document.getElementById('phone').value.trim();
             const phoneRegex = /^0[5-7][0-9]{8}$/;
             const cleanPhone = phoneInput.replace(/\D/g, '');
@@ -1309,7 +1320,6 @@
                 return;
             }
             
-            // التحقق من بقية الحقول
             const requiredFields = ['firstName', 'lastName', 'city'];
             for (const field of requiredFields) {
                 const input = document.getElementById(field);
@@ -1326,11 +1336,9 @@
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>جاري الإرسال...</span>';
             loadingElement.style.display = 'block';
             
-            // حساب السعر الإجمالي النهائي بشكل صحيح
             let productPrice = basePrice * quantity;
             const totalPriceValue = productPrice + shippingPrice;
             
-            // جمع بيانات النموذج
             const formData = {
                 firstName: document.getElementById('firstName').value.trim(),
                 lastName: document.getElementById('lastName').value.trim(),
@@ -1346,11 +1354,17 @@
             };
             
             try {
-                // إرسال البيانات إلى Google Sheets
-                const response = await sendToGoogleSheets(formData);
+                const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyHqN7U1I5dwetdXeLX-plvhwoxJdNs0cUJ6oTXJIWDCNGcdxfT9XX6Cn0nnF1YkVMePg/exec';
                 
-                if (response.success) {
-                    // إخفاء النموذج وإظهار رسالة التأكيد
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain;charset=utf-8',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (response.ok) {
                     document.getElementById('orderForm').querySelectorAll('.form-group, .quantity-section, .price-calc').forEach(el => {
                         el.style.display = 'none';
                     });
@@ -1359,10 +1373,8 @@
                     loadingElement.style.display = 'none';
                     confirmationMessage.style.display = 'block';
                     
-                    // التمرير إلى رسالة التأكيد
                     confirmationMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     
-                    // إعادة تعيين النموذج (خفي)
                     document.getElementById('orderForm').reset();
                     quantity = 1;
                     selectedState = "";
@@ -1370,78 +1382,23 @@
                     updatePrice();
                     
                 } else {
-                    throw new Error(response.message || 'حدث خطأ غير معروف');
+                    throw new Error('حدث خطأ في الخادم');
                 }
             } catch (error) {
-                // عرض رسالة الخطأ
                 alert(`عذراً! حدث خطأ أثناء إرسال الطلب: ${error.message}\n\nيرجى المحاولة مرة أخرى.`);
                 
-                // إعادة تعيين زر الإرسال
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>تأكيد الطلب الآن</span>';
                 loadingElement.style.display = 'none';
             }
         });
         
-        // دالة إرسال البيانات إلى Google Sheets
-        async function sendToGoogleSheets(data) {
-            // استبدل هذا الرابط برابط الـ Web App الخاص بك
-            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyHqN7U1I5dwetdXeLX-plvhwoxJdNs0cUJ6oTXJIWDCNGcdxfT9XX6Cn0nnF1YkVMePg/exec';
-            
-            const response = await fetch(GOOGLE_SCRIPT_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain;charset=utf-8',
-                },
-                body: JSON.stringify(data)
-            });
-            
-            return await response.json();
-        }
-        
-        // تحسين تجربة الهاتف: منع تكبير النص عند التركيز على الحقول
+        // تحسين تجربة الهاتف
         document.querySelectorAll('input').forEach(input => {
             input.addEventListener('focus', function() {
-                document.body.style.fontSize = '16px'; // إصلاح لمشكلة التكبير في iOS
+                document.body.style.fontSize = '16px';
             });
         });
-        
-        // إضافة تأثيرات للتمرير على الهواتف
-        let lastScrollTop = 0;
-        const header = document.querySelector('.sticky-header');
-        
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // إخفاء/إظهار الهيدر على الهواتف
-            if (window.innerWidth <= 768) {
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    // التمرير لأسفل
-                    header.style.transform = 'translateY(-100%)';
-                    header.style.transition = 'transform 0.3s ease';
-                } else {
-                    // التمرير لأعلى
-                    header.style.transform = 'translateY(0)';
-                    header.style.transition = 'transform 0.3s ease';
-                }
-            }
-            
-            lastScrollTop = scrollTop;
-            
-            // تأثير الظهور التدريجي للعناصر
-            const elements = document.querySelectorAll('.order-form, .detailed-features, .guarantee-badge');
-            elements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight - 50) {
-                    el.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-                    el.style.transform = 'translateY(0)';
-                    el.style.opacity = '1';
-                }
-            });
-        });
-        
-        // تهيئة السعر عند التحميل
-        updatePrice();
         
         // تحسين لوحة المفاتيح على الهواتف
         document.querySelectorAll('input[type="tel"]').forEach(input => {
@@ -1450,19 +1407,8 @@
             });
         });
         
-        // تبديل تلقائي للصور كل 5 ثواني
-        let slideInterval = setInterval(() => {
-            updateGallery(currentImageIndex + 1);
-        }, 5000);
-        
-        // إيقاف التبديل التلقائي عند التفاعل مع المعرض
-        mainImageContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
-        mainImageContainer.addEventListener('touchstart', () => clearInterval(slideInterval));
-        mainImageContainer.addEventListener('mouseleave', () => {
-            slideInterval = setInterval(() => {
-                updateGallery(currentImageIndex + 1);
-            }, 5000);
-        });
+        // تهيئة السعر عند التحميل
+        updatePrice();
     </script>
 </body>
 </html>
