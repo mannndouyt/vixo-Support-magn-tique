@@ -388,6 +388,27 @@
                 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         
+        .free-shipping-badge {
+            background: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%);
+            color: #091209;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 10px;
+            box-shadow: 
+                0 4px 10px rgba(243, 156, 18, 0.3),
+                0 0 10px rgba(241, 196, 15, 0.2);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
         .form-group {
             margin-bottom: 20px;
         }
@@ -576,8 +597,9 @@
         }
         
         .shipping-price {
-            color: #83ecce;
-            font-size: 0.9rem;
+            color: #f39c12;
+            font-weight: bold;
+            font-size: 1rem;
             margin-top: 8px;
             padding-top: 8px;
             border-top: 1px solid #406255;
@@ -834,7 +856,7 @@
             <div class="logo">حامل مغناطيسي قوي K007</div>
             <div class="phone-contact">
                 <i class="fas fa-bolt"></i>
-                <span>🔥 خصم 28% 🔥</span>
+                <span>🔥 شحن مجاني لـ28 ولاية 🔥</span>
             </div>
         </header>
         
@@ -873,7 +895,11 @@
                     <div class="product-info">
                         <div class="product-name">حامل مغناطيسي قوي K007</div>
                         <div>
-                            <span class="discount-badge">سعر ممتاز 1500 دج.</span>
+                            <span class="discount-badge">سعر ممتاز 1900 دج.</span>
+                        </div>
+                        
+                        <div class="free-shipping-badge">
+                            <i class="fas fa-truck"></i> شحن مجاني لـ28 ولاية - أسعار مخفضة للولايات الأخرى
                         </div>
                         
                         <div class="stock-status">
@@ -897,59 +923,64 @@
                             <label for="state">الولاية <span style="color: #8de361;">*</span></label>
                             <select id="state" name="state" required class="state-select">
                                 <option value="" disabled selected>اختر ولايتك</option>
-                                <option value="M'Sila">M'Sila - 400 DA</option>
-                                <option value="Bordj Bou Arreridj">Bordj Bou Arreridj - 450 DA</option>
-                                <option value="Setif">Setif - 450 DA</option>
-                                <option value="Alger">Alger - 450 DA</option>
-                                <option value="Annaba">Annaba - 500 DA</option>
-                                <option value="Batna">Batna - 500 DA</option>
-                                <option value="Bejaia">Bejaia - 500 DA</option>
-                                <option value="Blida">Blida - 500 DA</option>
-                                <option value="Bouira">Bouira - 500 DA</option>
-                                <option value="Boumerdes">Boumerdes - 500 DA</option>
-                                <option value="Constantine">Constantine - 500 DA</option>
-                                <option value="Jijel">Jijel - 500 DA</option>
-                                <option value="Khenchela">Khenchela - 500 DA</option>
-                                <option value="Medea">Medea - 500 DA</option>
-                                <option value="Mila">Mila - 500 DA</option>
-                                <option value="Oum El Bouaghi">Oum El Bouaghi - 500 DA</option>
-                                <option value="Skikda">Skikda - 500 DA</option>
-                                <option value="Tipaza">Tipaza - 500 DA</option>
-                                <option value="Tizi Ouzou">Tizi Ouzou - 500 DA</option>
-                                <option value="Ain Defla">Ain Defla - 500 DA</option>
-                                <option value="Chlef">Chlef - 500 DA</option>
-                                <option value="Mostaganem">Mostaganem - 500 DA</option>
-                                <option value="Oran">Oran - 500 DA</option>
-                                <option value="Ain Temouchent">Ain Temouchent - 500 DA</option>
-                                <option value="Mascara">Mascara - 500 DA</option>
-                                <option value="Relizane">Relizane - 500 DA</option>
-                                <option value="Sidi Bel Abbes">Sidi Bel Abbes - 500 DA</option>
-                                <option value="Tissemsilt">Tissemsilt - 500 DA</option>
-                                <option value="El Tarf">El Tarf - 600 DA</option>
-                                <option value="Guelma">Guelma - 600 DA</option>
-                                <option value="Souk Ahras">Souk Ahras - 600 DA</option>
-                                <option value="Tebessa">Tebessa - 600 DA</option>
-                                <option value="Saida">Saida - 600 DA</option>
-                                <option value="Tiaret">Tiaret - 600 DA</option>
-                                <option value="Tlemcen">Tlemcen - 600 DA</option>
-                                <option value="Biskra">Biskra - 600 DA</option>
-                                <option value="Djelfa">Djelfa - 600 DA</option>
-                                <option value="Laghouat">Laghouat - 600 DA</option>
-                                <option value="El Oued">El Oued - 700 DA</option>
-                                <option value="El M'Ghair">El M'Ghair - 700 DA</option>
-                                <option value="Ghardaia">Ghardaia - 700 DA</option>
-                                <option value="El Meniaa">El Meniaa - 700 DA</option>
-                                <option value="Ouargla">Ouargla - 700 DA</option>
-                                <option value="Touggourt">Touggourt - 700 DA</option>
-                                <option value="Bechar">Bechar - 800 DA</option>
-                                <option value="El Bayadh">El Bayadh - 800 DA</option>
-                                <option value="Naama">Naama - 800 DA</option>
-                                <option value="Adrar">Adrar - 1,000 DA</option>
-                                <option value="Timimoun">Timimoun - 1,000 DA</option>
-                                <option value="Tindouf">Tindouf - 1,000 DA</option>
-                                <option value="In Salah">In Salah - 1,200 DA</option>
-                                <option value="Illizi">Illizi - 1,500 DA</option>
-                                <option value="Tamanrasset">Tamanrasset - 1,500 DA</option>
+                                <option value="Msila">Msila - شحن مجاني</option>
+                                <option value="Bordj Bou Arreridj">Bordj Bou Arreridj - شحن مجاني</option>
+                                <option value="Setif">Setif - شحن مجاني</option>
+                                <option value="Alger">Alger - شحن مجاني</option>
+                                <option value="Annaba">Annaba - شحن مجاني</option>
+                                <option value="Batna">Batna - شحن مجاني</option>
+                                <option value="Bejaia">Bejaia - شحن مجاني</option>
+                                <option value="Blida">Blida - شحن مجاني</option>
+                                <option value="Bouira">Bouira - شحن مجاني</option>
+                                <option value="Boumerdes">Boumerdes - شحن مجاني</option>
+                                <option value="Constantine">Constantine - شحن مجاني</option>
+                                <option value="Jijel">Jijel - شحن مجاني</option>
+                                <option value="Khenchela">Khenchela - شحن مجاني</option>
+                                <option value="Medea">Medea - شحن مجاني</option>
+                                <option value="Mila">Mila - شحن مجاني</option>
+                                <option value="Oum El Bouaghi">Oum El Bouaghi - شحن مجاني</option>
+                                <option value="Skikda">Skikda - شحن مجاني</option>
+                                <option value="Tipaza">Tipaza - شحن مجاني</option>
+                                <option value="Tizi Ouzou">Tizi Ouzou - شحن مجاني</option>
+                                <option value="Ain Defla">Ain Defla - شحن مجاني</option>
+                                <option value="Chlef">Chlef - شحن مجاني</option>
+                                <option value="Mostaganem">Mostaganem - شحن مجاني</option>
+                                <option value="Oran">Oran - شحن مجاني</option>
+                                <option value="Ain Temouchent">Ain Temouchent - شحن مجاني</option>
+                                <option value="Mascara">Mascara - شحن مجاني</option>
+                                <option value="Relizane">Relizane - شحن مجاني</option>
+                                <option value="Sidi Bel Abbes">Sidi Bel Abbes - شحن مجاني</option>
+                                <option value="Tissemsilt">Tissemsilt - شحن مجاني</option>
+                                
+                                <!-- الولايات الجديدة مع أسعار الشحن -->
+                                <option value="El Tarf">El Tarf - شحن 100 DA</option>
+                                <option value="Guelma">Guelma - شحن 100 DA</option>
+                                <option value="Souk Ahras">Souk Ahras - شحن 100 DA</option>
+                                <option value="Tébessa">Tébessa - شحن 100 DA</option>
+                                <option value="Saida">Saida - شحن 100 DA</option>
+                                <option value="Tiaret">Tiaret - شحن 100 DA</option>
+                                <option value="Tlemcen">Tlemcen - شحن 100 DA</option>
+                                <option value="Biskra">Biskra - شحن 100 DA</option>
+                                <option value="Djelfa">Djelfa - شحن 100 DA</option>
+                                <option value="Laghouat">Laghouat - شحن 100 DA</option>
+                                
+                                <option value="El Oued">El Oued - شحن 200 DA</option>
+                                <option value="Ghardaia">Ghardaia - شحن 200 DA</option>
+                                <option value="El Meniaa">El Meniaa - شحن 200 DA</option>
+                                <option value="Ouargla">Ouargla - شحن 200 DA</option>
+                                <option value="Touggourt">Touggourt - شحن 200 DA</option>
+                                
+                                <option value="Bechar">Bechar - شحن 300 DA</option>
+                                <option value="El Bayadh">El Bayadh - شحن 300 DA</option>
+                                <option value="Naama">Naama - شحن 300 DA</option>
+                                
+                                <option value="Adrar">Adrar - شحن 500 DA</option>
+                                <option value="Timimoun">Timimoun - شحن 500 DA</option>
+                                <option value="Tindouf">Tindouf - شحن 500 DA</option>
+                                
+                                <option value="In Salah">In Salah - شحن 700 DA</option>
+                                <option value="Illizi">Illizi - شحن 1,000 DA</option>
+                                <option value="Tamanrasset">Tamanrasset - شحن 1,000 DA</option>
                             </select>
                         </div>
                         
@@ -977,7 +1008,7 @@
                             <div class="price-calc">
                                 <div class="price-info">
                                     <span class="price-label">سعر القطعة:</span>
-                                    <span class="price-value" id="unitPrice">1500 DA</span>
+                                    <span class="price-value" id="unitPrice">1900 DA</span>
                                 </div>
                                 <div class="price-info">
                                     <span class="price-label">الكمية:</span>
@@ -994,7 +1025,7 @@
                                 </div>
                                 
                                 <div class="shipping-price" id="shippingPrice">
-                                    التوصيل خلال 2-5 أيام عمل
+                                    اختر ولايتك لرؤية سعر الشحن
                                 </div>
                             </div>
                         </div>
@@ -1011,8 +1042,8 @@
                             </div>
                             <h3 class="confirmation-title">تم تأكيد طلبك بنجاح! ✓</h3>
                             <p class="confirmation-text">شكراً لك على طلبك. سيتم التواصل معك خلال 24 ساعة لتأكيد الطلب وتحديد موعد التوصيل.</p>
-                            <div style="color: #8de361; font-weight: bold; margin-top: 15px;">
-                                <i class="fas fa-shipping-fast" style="margin-left: 5px;"></i>
+                            <div style="color: #f39c12; font-weight: bold; margin-top: 15px;">
+                                <i class="fas fa-truck" style="margin-left: 5px;"></i>
                                 التوصيل خلال 2-5 أيام عمل
                             </div>
                         </div>
@@ -1092,62 +1123,67 @@
 
     <script>
         // أسعار المنتج والشحن
-        const basePrice = 1500.00;
+        const basePrice = 1900.00;
         
         const shippingPrices = {
-            "M'Sila": 400,
-            "Bordj Bou Arreridj": 450,
-            "Setif": 450,
-            "Alger": 450,
-            "Annaba": 500,
-            "Batna": 500,
-            "Bejaia": 500,
-            "Blida": 500,
-            "Bouira": 500,
-            "Boumerdes": 500,
-            "Constantine": 500,
-            "Jijel": 500,
-            "Khenchela": 500,
-            "Medea": 500,
-            "Mila": 500,
-            "Oum El Bouaghi": 500,
-            "Skikda": 500,
-            "Tipaza": 500,
-            "Tizi Ouzou": 500,
-            "Ain Defla": 500,
-            "Chlef": 500,
-            "Mostaganem": 500,
-            "Oran": 500,
-            "Ain Temouchent": 500,
-            "Mascara": 500,
-            "Relizane": 500,
-            "Sidi Bel Abbes": 500,
-            "Tissemsilt": 500,
-            "El Tarf": 600,
-            "Guelma": 600,
-            "Souk Ahras": 600,
-            "Tebessa": 600,
-            "Saida": 600,
-            "Tiaret": 600,
-            "Tlemcen": 600,
-            "Biskra": 600,
-            "Djelfa": 600,
-            "Laghouat": 600,
-            "El Oued": 700,
-            "El M'Ghair": 700,
-            "Ghardaia": 700,
-            "El Meniaa": 700,
-            "Ouargla": 700,
-            "Touggourt": 700,
-            "Bechar": 800,
-            "El Bayadh": 800,
-            "Naama": 800,
-            "Adrar": 1000,
-            "Timimoun": 1000,
-            "Tindouf": 1000,
-            "In Salah": 1200,
-            "Illizi": 1500,
-            "Tamanrasset": 1500
+            "Msila": 0,
+            "Bordj Bou Arreridj": 0,
+            "Setif": 0,
+            "Alger": 0,
+            "Annaba": 0,
+            "Batna": 0,
+            "Bejaia": 0,
+            "Blida": 0,
+            "Bouira": 0,
+            "Boumerdes": 0,
+            "Constantine": 0,
+            "Jijel": 0,
+            "Khenchela": 0,
+            "Medea": 0,
+            "Mila": 0,
+            "Oum El Bouaghi": 0,
+            "Skikda": 0,
+            "Tipaza": 0,
+            "Tizi Ouzou": 0,
+            "Ain Defla": 0,
+            "Chlef": 0,
+            "Mostaganem": 0,
+            "Oran": 0,
+            "Ain Temouchent": 0,
+            "Mascara": 0,
+            "Relizane": 0,
+            "Sidi Bel Abbes": 0,
+            "Tissemsilt": 0,
+            
+            // الولايات الجديدة مع أسعار الشحن
+            "El Tarf": 100,
+            "Guelma": 100,
+            "Souk Ahras": 100,
+            "Tébessa": 100,
+            "Saida": 100,
+            "Tiaret": 100,
+            "Tlemcen": 100,
+            "Biskra": 100,
+            "Djelfa": 100,
+            "Laghouat": 100,
+            
+            "El Oued": 200,
+            "Ghardaia": 200,
+            "El Meniaa": 200,
+            "Ouargla": 200,
+            "Touggourt": 200,
+            
+            "Bechar": 300,
+            "El Bayadh": 300,
+            "Naama": 300,
+            
+            "Adrar": 500,
+            "Timimoun": 500,
+            "Tindouf": 500,
+            
+            "In Salah": 700,
+            "Illizi": 1000,
+            "Tamanrasset": 1000
         };
         
         let quantity = 1;
@@ -1172,28 +1208,27 @@
             let productPrice = basePrice * quantity;
             let totalPrice = productPrice;
             
-            if (selectedState && shippingPrices[selectedState]) {
+            if (selectedState && shippingPrices[selectedState] !== undefined) {
                 shippingPrice = shippingPrices[selectedState];
                 totalPrice += shippingPrice;
                 
-                shippingTextElement.textContent = `${shippingPrice} DA`;
-                shippingTextElement.style.color = '#6ce084';
-                
-                if (quantity === 1) {
-                    shippingPriceElement.textContent = `سعر المنتج: ${productPrice.toFixed(0)} DA + الشحن: ${shippingPrice} DA`;
+                if (shippingPrice === 0) {
+                    shippingTextElement.textContent = `مجاني`;
+                    shippingTextElement.style.color = '#f39c12';
+                    shippingPriceElement.textContent = `الشحن مجاني لهذه الولاية`;
+                    shippingPriceElement.style.color = '#f39c12';
                 } else {
-                    shippingPriceElement.textContent = `سعر ${quantity} قطع: ${productPrice.toFixed(0)} DA + الشحن: ${shippingPrice} DA`;
+                    shippingTextElement.textContent = `${shippingPrice} DA`;
+                    shippingTextElement.style.color = '#6ce084';
+                    shippingPriceElement.textContent = `سعر الشحن: ${shippingPrice} DA`;
+                    shippingPriceElement.style.color = '#6ce084';
                 }
             } else {
                 shippingPrice = 0;
                 shippingTextElement.textContent = "اختر الولاية";
                 shippingTextElement.style.color = '#a4f0d7';
-                
-                if (selectedState) {
-                    shippingPriceElement.textContent = "سعر الشحن غير محدد لهذه الولاية";
-                } else {
-                    shippingPriceElement.textContent = "اختر الولاية لحساب السعر الإجمالي";
-                }
+                shippingPriceElement.textContent = "اختر ولايتك لرؤية سعر الشحن";
+                shippingPriceElement.style.color = '#a4f0d7';
             }
             
             // تحديث العرض
