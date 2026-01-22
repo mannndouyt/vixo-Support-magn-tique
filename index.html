@@ -493,6 +493,17 @@
             position: relative;
         }
         
+        .price-info-special {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(10, 18, 9, 0.5);
+            border-radius: 8px;
+            border: 1px dashed #6ce084;
+        }
+        
         .quantity-control {
             display: flex;
             align-items: center;
@@ -856,7 +867,7 @@
             <div class="logo">حامل مغناطيسي قوي K007</div>
             <div class="phone-contact">
                 <i class="fas fa-bolt"></i>
-                <span>🔥 شحن مجاني لـ28 ولاية 🔥</span>
+                <span>🔥 سعر خاص للقطع الإضافية 🔥</span>
             </div>
         </header>
         
@@ -895,7 +906,8 @@
                     <div class="product-info">
                         <div class="product-name">حامل مغناطيسي قوي K007</div>
                         <div>
-                            <span class="discount-badge">سعر ممتاز 1900 دج.</span>
+                            <span class="discount-badge">القطعة الأولى 1900 دج</span>
+                            <span class="discount-badge">القطعة الإضافية 1400 دج</span>
                         </div>
                         
                         <div class="free-shipping-badge">
@@ -996,7 +1008,12 @@
                         
                         <div class="quantity-section">
                             <label for="quantity">عدد الطلبيات <span style="color: #8de361;">*</span></label>
-                            <p style="color: #c4f8e4; font-size: 0.9rem; margin-top: 5px;">احصل على سعر خاص عند طلب أكثر من قطعة</p>
+                            <p style="color: #c4f8e4; font-size: 0.9rem; margin-top: 5px;">القطعة الأولى 1900 دج - القطع الإضافية 1400 دج لكل قطعة</p>
+                            
+                            <div class="price-info-special">
+                                <span class="price-label">سعر القطعة:</span>
+                                <span class="price-value" id="currentUnitPrice">1900 DA</span>
+                            </div>
                             
                             <div class="quantity-control">
                                 <button type="button" class="quantity-btn" id="decreaseQty">-</button>
@@ -1007,12 +1024,16 @@
                             
                             <div class="price-calc">
                                 <div class="price-info">
-                                    <span class="price-label">سعر القطعة:</span>
-                                    <span class="price-value" id="unitPrice">1900 DA</span>
+                                    <span class="price-label">سعر القطعة الأولى:</span>
+                                    <span class="price-value" id="firstUnitPriceText">1900 DA</span>
                                 </div>
                                 <div class="price-info">
-                                    <span class="price-label">الكمية:</span>
-                                    <span class="price-value" id="quantityText">1</span>
+                                    <span class="price-label">القطع الإضافية:</span>
+                                    <span class="price-value" id="additionalUnitsText">0 قطعة × 1400 DA</span>
+                                </div>
+                                <div class="price-info">
+                                    <span class="price-label">الكمية الإجمالية:</span>
+                                    <span class="price-value" id="quantityText">1 قطعة</span>
                                 </div>
                                 <div class="price-info">
                                     <span class="price-label">الشحن:</span>
@@ -1123,7 +1144,8 @@
 
     <script>
         // أسعار المنتج والشحن
-        const basePrice = 1900.00;
+        const firstUnitPrice = 1900.00;
+        const additionalUnitPrice = 1400.00;
         
         const shippingPrices = {
             "Msila": 0,
@@ -1196,6 +1218,9 @@
         const shippingPriceElement = document.getElementById('shippingPrice');
         const shippingTextElement = document.getElementById('shippingText');
         const quantityTextElement = document.getElementById('quantityText');
+        const currentUnitPriceElement = document.getElementById('currentUnitPrice');
+        const firstUnitPriceTextElement = document.getElementById('firstUnitPriceText');
+        const additionalUnitsTextElement = document.getElementById('additionalUnitsText');
         const decreaseBtn = document.getElementById('decreaseQty');
         const increaseBtn = document.getElementById('increaseQty');
         const stateSelect = document.getElementById('state');
@@ -1205,7 +1230,20 @@
         
         // دالة حساب وتحديث السعر
         function updatePrice() {
-            let productPrice = basePrice * quantity;
+            let productPrice = 0;
+            let additionalUnits = 0;
+            
+            if (quantity === 1) {
+                productPrice = firstUnitPrice;
+                currentUnitPriceElement.textContent = "1900 DA";
+                additionalUnitsTextElement.textContent = "0 قطعة × 1400 DA";
+            } else {
+                additionalUnits = quantity - 1;
+                productPrice = firstUnitPrice + (additionalUnitPrice * additionalUnits);
+                currentUnitPriceElement.textContent = "1400 DA";
+                additionalUnitsTextElement.textContent = `${additionalUnits} قطعة × 1400 DA`;
+            }
+            
             let totalPrice = productPrice;
             
             if (selectedState && shippingPrices[selectedState] !== undefined) {
@@ -1234,7 +1272,7 @@
             // تحديث العرض
             quantityDisplay.textContent = quantity;
             quantityInput.value = quantity;
-            quantityTextElement.textContent = quantity;
+            quantityTextElement.textContent = `${quantity} قطعة`;
             
             totalPriceElement.textContent = totalPrice.toFixed(0) + ' DA';
             
@@ -1371,7 +1409,14 @@
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>جاري الإرسال...</span>';
             loadingElement.style.display = 'block';
             
-            let productPrice = basePrice * quantity;
+            // حساب السعر حسب النظام الجديد
+            let productPrice = 0;
+            if (quantity === 1) {
+                productPrice = firstUnitPrice;
+            } else {
+                productPrice = firstUnitPrice + (additionalUnitPrice * (quantity - 1));
+            }
+            
             const totalPriceValue = productPrice + shippingPrice;
             
             const formData = {
@@ -1381,6 +1426,9 @@
                 city: document.getElementById('city').value.trim(),
                 phone: cleanPhone,
                 quantity: quantity,
+                firstUnitPrice: firstUnitPrice,
+                additionalUnitPrice: additionalUnitPrice,
+                additionalUnits: quantity > 1 ? quantity - 1 : 0,
                 productPrice: productPrice,
                 shippingPrice: shippingPrice,
                 totalPrice: totalPriceValue,
